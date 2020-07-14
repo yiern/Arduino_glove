@@ -123,4 +123,5 @@ void loop()
   BT.println(String(angle0) + "," + String(angle6) + "," + String(angle1) + "," + String("0")+ "," + String(angle4)+ "," + String(angle5));
   
   delay(500); //delay 5 sec before sending sensor 2 data
+  //added mk.1
 }
