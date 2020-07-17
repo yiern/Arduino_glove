@@ -7,7 +7,7 @@ voltage at A0 should decrease.
 **************************/
 #include <SoftwareSerial.h>
 #include <Arduino.h>
-SoftwareSerial BT(2, 3);
+SoftwareSerial BT(2, 3); // rx,tx
 
 const int FLEX_PIN0 = A0; //Pin connected to voltage divider output (1418)
 const int FLEX_PIN1 = A1; //Pin connected to volatge divider output (0918)
@@ -108,7 +108,7 @@ void loop()
 
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  int flexADC6 = analogRead(FLEX_PIN5);
+  int flexADC6 = analogRead(FLEX_PIN6);
   float flexV6 = flexADC5 * VCC / 1023.0;
   float flexR6 = R_DIV0 * (VCC / flexV6 - 1.0);
   
@@ -121,6 +121,8 @@ void loop()
  Serial.println(String(angle0) + ","  + String(angle1) +  "," + String(angle4)+ "," + String(angle5)+ "," + String(angle6));
   
   BT.println(String(angle0) + "," + String(angle6) + "," + String(angle1) + "," + String("0")+ "," + String(angle4)+ "," + String(angle5));
+
+  
   
   delay(500); //delay 5 sec before sending sensor 2 data
 }
