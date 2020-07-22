@@ -118,7 +118,7 @@ void loop()
   //bend angle:
   float Middle_Angle = map(flexR6, STRAIGHT_RESISTANCE6, BEND_RESISTANCE6, 0, 90.0);
 
-Serial.println(String(Thumb_Angle) + ","  + String(Index_Angle) +  "," + String(Pinky_Angle)+ "," + String(Ring_Angle)+ "," + String(Middle_Angle));
+Serial.println("Thumb Reading" + String(Thumb_Angle) + ","  + String(Index_Angle) +  "," + String(Pinky_Angle)+ "," + String(Ring_Angle)+ "," + String(Middle_Angle));
   
 BT.println(String(Thumb_Angle) + "," + String(Middle_Angle) + "," + String(Index_Angle) + "," + String("0")+ "," + String(Pinky_Angle)+ "," + String(Ring_Angle));
 
