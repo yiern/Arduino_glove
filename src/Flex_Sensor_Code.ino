@@ -10,10 +10,10 @@ voltage at A0 should decrease.
 SoftwareSerial BT(2, 3); // rx,tx
 
 const int THUMB = A0; //thumb
-const int INDEX = A1; //index
+const int INDEX = A2; //index
 const int PINKY = A4; //pinky
-const int RING = A3; //ring
-const int MIDDLE = A2; //middle
+const int RING = A3; //ring 
+const int MIDDLE = A1; //middle
 
 //Measure the voltage at 5V and the actual resistance of your
 //10k resistor, and enter them below:
@@ -120,9 +120,9 @@ void loop()
 
 //Serial.println("Thumb Reading: " + String(Thumb_Angle) + ", Index Reading: "  + String(Index_Angle) +  ", Middle Reading: " + String(Middle_Angle)+ ", Ring Reading: " + String(Ring_Angle)+ ", Pinky reading: " + String(Pinky_Angle));
   
-BT.println(String(Thumb_Angle) + "," + String(Index_Angle) + "," + String(Middle_Angle) + "," + String(Ring_Angle)+ "," + String(Pinky_Angle));
+BT.println(String(Thumb_Angle) + "," + String(Middle_Angle) + "," + String(Index_Angle) + "," + String(Ring_Angle)+ "," + String(Pinky_Angle));
 
-  
-  
-  delay(500); //delay 1/2 sec before sending sensor 2 data
+// middle = index, index = middle
+
+delay(500); //delay 1/2 sec before sending sensor 2 data
 }
